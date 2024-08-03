@@ -1,0 +1,15 @@
+{
+  "name": "project_back",
+  "version": "1.0.0",
+  "description": "a backhend at chai aur code channel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript",
+    "backhend"
+  ],
+  "author": "dhairya",
+  "license": "ISC"
+}
