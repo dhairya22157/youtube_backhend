@@ -79,7 +79,7 @@ const loginUser = asyncHandler(async(req,res)=>{
     // access and refresh token
     // send the response or cookie
     const {username, email, password}=req.body;
-    if(!username || !email){
+    if(!(username || email)){
         throw new ApiError(400, 'Username or email is required');
     }
     const user = await User.findOne({
@@ -89,7 +89,7 @@ const loginUser = asyncHandler(async(req,res)=>{
     if(!user){
         throw new ApiError(400, 'User not found');
     }
-    const isPasswordMatched = await user.isPasswordMatched(password);
+    const isPasswordMatched = await user.isPasswordCorrect(password);
     if(!isPasswordMatched){
         throw new ApiError(400, 'Password is incorrect');
     }
